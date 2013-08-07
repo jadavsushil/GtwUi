@@ -1,7 +1,7 @@
-CakePHP Plugin Upload
+Gintonic Web's CakePHP Ui plugin
 ======================
 
-Plugin that binds CakePHP with [require.js] [1] and [Twitter Bootstrap] [2]
+Plugin that binds CakePHP with [require.js] [1] and (eventually)[Twitter Bootstrap] [2]
 
 
 Description
@@ -28,11 +28,16 @@ You should either copy this plugin's webroot content to your own applications we
 Javascript with require.js
 ---------------------------
 Global javascript should be placed in /js/common.js
+
 Application modules should be placed in /js/app/
+
 Libraries go in /js/libs/
 
+
 If the file /js/Controller/action.js exists, it's loaded automatically
+
 If not, it will look for the file /js/Controller.js
+
 When none of them are present, common.js is loaded.
 
 
