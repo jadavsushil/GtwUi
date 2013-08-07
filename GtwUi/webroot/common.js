@@ -11,7 +11,11 @@ requirejs.config({
     baseUrl: '/js/lib',
     
     paths: {
-        app: '/js/app'
+        app: '/js/app',
+        jquery: [
+            '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min',
+            '/js/lib/jquery-2.0.3.min'
+        ]
     },
     
     optimize: "none"
@@ -20,4 +24,5 @@ requirejs.config({
 
 define(function(require) {
     // Global javascript
+    require("jquery");
 });

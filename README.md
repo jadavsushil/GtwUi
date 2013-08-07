@@ -1,11 +1,12 @@
 CakePHP Plugin Upload
 ======================
 
-Plugin that binds CakePHP with [require.js] [1] and [twitter bootstrap] [2]
+Plugin that binds CakePHP with [require.js] [1] and [Twitter Bootstrap] [2]
+
 
 Description
-* Loads Controller and Action specific javascript modules using [Require.js] [1]
-* 
+* Loads Controller and Action specific javascript modules using [Require.js] [1] 
+* The other features are yet to come
 
 Installation
 -------------
@@ -35,5 +36,5 @@ If not, it will look for the file /js/Controller.js
 When none of them are present, common.js is loaded.
 
 
-  [1]: http://requirejs.com/        "Requirejs"
+  [1]: http://requirejs.org/        "Requirejs"
   [2]: twitter.github.io/bootstrap/        "Twitter Bootstrap"
