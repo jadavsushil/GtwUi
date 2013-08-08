@@ -25,4 +25,6 @@ requirejs.config({
 define(function(require) {
     // Global javascript
     require("jquery");
+    require("app/active_nav");
+    
 });
