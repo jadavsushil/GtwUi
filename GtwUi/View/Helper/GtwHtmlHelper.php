@@ -35,7 +35,7 @@ class GtwHtmlHelper extends HtmlHelper {
         return $this->Html->script( 'require', array( 'data-main' => '/js/common.js' ) );
     }
     
-    public function activeNav(){
-        return $this->_View->element('GtwUi.active_nav', array('active' => 'pricing'));
+    public function activeNav($active){
+        return $this->_View->element('GtwUi.active_nav', array('active' => $active));
     }
 }
