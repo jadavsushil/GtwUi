@@ -14,6 +14,9 @@
 */
 define(function(require) {
 
-    $('#' + $('#active-nav').val() + '-lnk').addClass('active');
+    require('jquery');
+    $( document ).ready(function() {
+        $('#' + $('#active-nav').val() + '-lnk').addClass('active');
+    });
    
 });
