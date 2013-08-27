@@ -5,13 +5,14 @@ Plugin that binds CakePHP with [require.js] [1] and (eventually)[Twitter Bootstr
 
 Requirements
 ------------
-CakePHP 2.1
+CakePHP 2.1+
 
 Features
 --------
-* Loads Controller and Action specific javascript modules using [Require.js] [1] 
-* Active element in navbar through Html helper
-* The other features are yet to come
+* Loads Controller and action-specific javascript modules using [Require.js] [1] 
+* Add javascript dependencies through the Html Helper 
+* Activate element in navbar through Html helper
+* ( More features are yet to come )
 
 Installation
 -------------
@@ -28,7 +29,11 @@ Alias the HTML helper in your AppController.php
         )
     );
     
-You should either copy this plugin's webroot content to your own applications webroot or create symbolic links
+Create a symlink from plugin's webroot to the application webroot
+    # On windows
+    mklink /J app/webroot/GtwUi app/Plugin/GtwUi/webroot
+    # On linux
+    ln -s app/Plugin/GtwUi/webroot app/webroot/GtwUi
 
 Javascript with require.js
 ---------------------------
@@ -39,6 +44,14 @@ Javascript with require.js
 * If not, it will look for the file /js/Controller.js
 * When none of them are present, common.js is loaded.
 
+Add your module dependencies using the Html helper like this
+
+    <?php $this->Html->add_js_dependency('lib/application'); ?>
+    
+At the end of your layout, load requirejs like this
+
+    <?php echo $this->Html->js_require(); ?>
+    
 Activate navbar elements through the helper
 -------------------------------------------
 This utility allows you to keep navs in elements without having to use inline javascript.

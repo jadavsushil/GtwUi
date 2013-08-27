@@ -15,6 +15,8 @@ class GtwHtmlHelper extends HtmlHelper {
     public $basepath = '/GtwUi/js/';
     public $requirejs = '/GtwUi/js/require';
     
+    public $dependencies = array();
+    
 /**
  * Call this function in your layout to include javascript modules based on controller and action name
  * Folder structure should mimic Pages structure. action.js overrides Controller.js, and Controller.js
@@ -24,20 +26,37 @@ class GtwHtmlHelper extends HtmlHelper {
  * webroot/GtwUi/js/ControllerName.js is no action is defined
  * webroot/GtwUi/js/common.js is called if nothing else exists
  */
-    public function javascript(){
+    public function js_require(){
     
+        $script = '';
         $jsController = $this->basepath . Inflector::camelize($this->params['controller']);
         
         if (is_file($jsController . '/' . $this->params['action'] . '.js')) {
             $file = $this->basepath . Inflector::camelize($this->params['controller']) . '/' . $this->params['action'] . '.js';
-            return $this->Html->script( 'require', array( 'data-main' => $file ) );
+            $script = $this->Html->script( 'require', array( 'data-main' => $file ) );
             
         } else if(is_file($jsController . '.js')) {
             $file = $this->basepath . Inflector::camelize($this->params['controller']) . '.js';
-            return $this->Html->script( 'require', array( 'data-main' => $file ) );
+            $script = $this->Html->script( 'require', array( 'data-main' => $file ) );
+        } else {
+            $script = $this->Html->script( $this->requirejs , array( 'data-main' => $this->basepath . 'common.js' ) );
         }
-
-        return $this->Html->script( $this->requirejs , array( 'data-main' => $this->basepath . 'common.js' ) );
+        
+        return $script . $this->get_js_dependencies();
+        
+    }
+    
+    public function add_js_dependency($dependency){
+        $this->dependencies[] = $dependency;
+        return;
+    }
+    
+    private function get_js_dependencies(){
+        $script = '';
+        foreach($this->dependencies as $dependency){
+            $script .= '<script>require([\'' . (string)$dependency . '\']);</script>';
+        }
+        return $script;
     }
     
     public function activeNav($active){
