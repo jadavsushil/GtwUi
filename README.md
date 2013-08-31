@@ -9,8 +9,7 @@ CakePHP 2.1+
 
 Features
 --------
-* Loads Controller and action-specific javascript modules using [Require.js] [1] 
-* Add javascript dependencies through the Html Helper
+* [Loads javascript modules the Html Helper](https://github.com/Phillaf/GtwUi/wiki/Javascript-includes-using-require.js) using [Require.js] [1] 
 * [Bootstrap Navbar support](https://github.com/Phillaf/GtwUi/wiki/Bootstrap-Navbars)
 
 Installation
