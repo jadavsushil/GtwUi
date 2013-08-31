@@ -2,10 +2,8 @@
     Gintonic Web
     Author:    Philippe Lafrance
     Link:      http://gintonicweb.com
-    Copyright: 2013 Gintonic Web. All rights reserved.
-    Licence:   Available via Apache 2.0 license
     
-    Usage : navbar
+    Usage
     --------------
     Every element should have an id in this form:
         <li id="home-lnk"><a href="#">Home</a></li>
@@ -14,9 +12,11 @@
 */
 define(function(require) {
 
+    require('../common');
     require('jquery');
+    
     $( document ).ready(function() {
-        $('#' + $('#active-nav').val() + '-lnk').addClass('active');
+        $( '#' + $('#active-lnk').val() ).addClass('active');
     });
    
 });
