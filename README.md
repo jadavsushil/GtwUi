@@ -28,8 +28,10 @@ Alias the HTML helper in your AppController.php
     );
     
 Create a symlink from plugin's webroot to the application webroot
+
     # On windows
-    mklink /J app/webroot/GtwUi app/Plugin/GtwUi/webroot
+    mklink /J app\webroot\GtwUi app\Plugin\GtwUi\webroot
+    
     # On linux
     ln -s app/Plugin/GtwUi/webroot app/webroot/GtwUi
    

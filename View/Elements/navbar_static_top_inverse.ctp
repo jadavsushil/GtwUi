@@ -27,4 +27,8 @@
     <input id='active-lnk' type="hidden" value='<?php echo $this->fetch('active_nav'); ?>'/>
 </div>
 
-<?php echo $this->Html->css('/GtwUi/css/navbar-top'); ?>
+<?php 
+    $this->Helpers->load('GtwUi.GtwHtml');
+    echo $this->GtwHtml->js_module('app/active_nav');
+    echo $this->Html->css('/GtwUi/css/navbar-top'); 
+?>
