@@ -33,4 +33,11 @@ class GtwHtmlHelper extends HtmlHelper {
     public function js_module($dependency){
         return '<script>require([\'' . (string)$dependency . '\']);</script>';
     }
+    
+    public function datatable($tableid){
+        $output = $this->css("/GtwUi/css/dataTables.bootstrap.css");
+        //$output .= $this->js_module('datatablesEnable');
+        return $output . '<input type="hidden" id="data-table-ref" value="' . $tableid . '"/>';
+    }
+    
 }

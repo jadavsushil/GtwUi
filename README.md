@@ -1,16 +1,20 @@
 Gintonic Web's CakePHP Ui plugin
 ======================
 
-Plugin that binds CakePHP with [require.js] [1] and (eventually)[Twitter Bootstrap] [2]
+Plugin that binds various front-end and javascript libraries with CakePHP. Most features are
+accessible through the HTML helper. This plugin is intended to be used as the core plugin of
+a website and extended with [various other plugins](https://github.com/Phillaf?tab=repositories).
 
 Requirements
 ------------
-CakePHP 2.1+
+CakePHP 2.4.0+
 
 Features
 --------
-* [Loads javascript modules the Html Helper](https://github.com/Phillaf/GtwUi/wiki/Javascript-includes-using-require.js) using [Require.js] [1] 
-* [Bootstrap Navbar support](https://github.com/Phillaf/GtwUi/wiki/Bootstrap-Navbars)
+* Javascript modules loaded asynchroneously using [Require.js] (http://requirejs.org/).
+* Consistent layout built on [Bootstrap 3] (http://getbootstrap.com/).
+* Icons from [FontAwesome] (http://fortawesome.github.io/Font-Awesome/).
+* [DataTables] (http://datatables.net) for easily searchable and paginated tables.
 
 Installation
 -------------
@@ -34,6 +38,9 @@ Create a symlink from plugin's webroot to the application webroot
     
     # On linux
     ln -s app/Plugin/GtwUi/webroot app/webroot/GtwUi
-   
-  [1]: http://requirejs.org/            "Requirejs"
-  [2]: twitter.github.io/bootstrap/     "Twitter Bootstrap"
+    
+    
+Notes
+-------
+
+This plugin is still under development and should not be considered stable.
