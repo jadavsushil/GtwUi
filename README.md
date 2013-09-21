@@ -1,13 +1,15 @@
 Gintonic Web's CakePHP Ui plugin
 ======================
 
-Plugin that binds various front-end and javascript libraries with CakePHP. Most features are
-accessible through the HTML helper. This plugin is intended to be used as the core plugin of
-a website and extended with [various other plugins](https://github.com/Phillaf?tab=repositories).
+Plugin that binds various front-end and javascript libraries with CakePHP. This plugin is intended 
+to be used as the core ui plugin of a website and extended with 
+[various other plugins](https://github.com/Phillaf?tab=repositories).
 
 Requirements
 ------------
 CakePHP 2.4.0+
+[BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake)
+[GtwRequire] (https://github.com/Phillaf/GtwRequire)
 
 Features
 --------
@@ -26,9 +28,8 @@ Load the plugin using bootstrap.php
 Alias the HTML helper in your AppController.php
 
     public $helpers = array(
-        'Html' => array(
-            'className' => 'GtwUi.GtwHTML'
-        )
+        'Html' => array('className' => 'GtwUi.GtwHTML'),
+        'Form' => array('className' => 'GtwUi.GtwForm'),
     );
     
 Create a symlink from plugin's webroot to the application webroot
@@ -43,4 +44,4 @@ Create a symlink from plugin's webroot to the application webroot
 Notes
 -------
 
-This plugin is still under development and should not be considered stable.
+This plugin is still under development and should probably not be used yet :)
