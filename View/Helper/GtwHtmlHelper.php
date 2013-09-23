@@ -6,15 +6,22 @@
  */
 
 App::uses('BoostCakeHtmlHelper', 'BoostCake.View/Helper');
+App::uses('GtwRequireHelper', 'GtwRequire.View/Helper');
  
 class GtwHtmlHelper extends BoostCakeHtmlHelper {
     
-    public $helpers = array('Html' => array(
-        'className' => 'BoostCake.BoostCakeHtml'
-    ));
+    public $helpers = array(
+        'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+        'Require' => array('className' => 'GtwRequire.GtwRequireHelper')
+    );
     
     public function datatable($tableid){
-        $output = $this->css("/GtwUi/css/dataTables.bootstrap.css");
-        return $output . '<input type="hidden" id="data-table-ref" value="' . $tableid . '"/>';
+        $css = $this->css("/GtwUi/css/dataTables.bootstrap.css");
+        $hide = '<style type="text/css">#'.$tableid.'{display:none;}</style>';
+        $loading = '<span id="'.$tableid.'-loader">loading</span>';
+        $tableId = '<input type="hidden" id="data-table-ref" value="' . $tableid . '"/>';
+        $this->Require->req("ui/app/datatables_enable");
+        return $css . $hide . $loading . $tableId;
     }
+    
 }

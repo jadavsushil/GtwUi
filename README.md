@@ -23,13 +23,13 @@ Installation
 
 Load the plugin using bootstrap.php
 
-    CakePlugin::load('GtwUi'); 
+    CakePlugin::load('GtwUi');
     
 Alias the HTML helper in your AppController.php
 
     public $helpers = array(
         'Html' => array('className' => 'GtwUi.GtwHTML'),
-        'Form' => array('className' => 'GtwUi.GtwForm'),
+        'Form' => array('className' => 'GtwUi.GtwForm')
     );
     
 Create a symlink from plugin's webroot to the application webroot
@@ -40,6 +40,14 @@ Create a symlink from plugin's webroot to the application webroot
     # On linux
     ln -s app/Plugin/GtwUi/webroot app/webroot/GtwUi
     
+Add the following config to your requirejs config file
+
+    requirejs.config({
+        paths: {
+            ui:     '/GtwUi/js',
+            jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min'
+        }
+    });
     
 Notes
 -------

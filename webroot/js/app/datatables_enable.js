@@ -1,4 +1,4 @@
-define(function(require) {
+require(['jquery', 'ui/app/datatables_bootstrap'],function($) {
     $(document).ready(function() {
         var datatableid = '#' + $('#data-table-ref').val();   
         $(datatableid).dataTable();
@@ -9,6 +9,7 @@ define(function(require) {
         }).remove();
         $(datatableid+'_filter input').addClass('form-control');
         $(datatableid+'_filter').parent().prepend('<label class="control-label col-md-6">Search</label>');
-        console.log( "ready!" );
+        $(datatableid+'-loader').hide();
+        $(datatableid).show();
     });
 });

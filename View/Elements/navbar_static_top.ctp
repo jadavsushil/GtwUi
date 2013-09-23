@@ -29,6 +29,6 @@
 
 <?php 
     $this->Helpers->load('GtwUi.GtwHtml');
-    echo $this->GtwHtml->js_module('app/active_nav'); 
+    echo $this->GtwHtml->js_module('ui/app/active_nav'); 
     echo $this->Html->css('/GtwUi/css/navbar-top'); 
 ?>

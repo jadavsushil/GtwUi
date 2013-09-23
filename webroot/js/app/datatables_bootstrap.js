@@ -1,8 +1,7 @@
-define(function(require) {
+define(['jquery', 'jqueryDataTables'], function($) {
 
     /* Set the defaults for DataTables initialisation */
     $.extend( true, $.fn.dataTable.defaults, {
-        //"sDom": "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
         "sDom": "<'form-horizontal'<'form-group'f>>t<'row'<'col-md-6'i><'col-md-6'p>>",
         "sPaginationType": "bootstrap",
         "oLanguage": {

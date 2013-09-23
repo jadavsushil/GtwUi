@@ -28,7 +28,7 @@
 </div>
 
 <?php 
-    $this->Helpers->load('GtwUi.GtwHtml');
-    echo $this->GtwHtml->js_module('app/active_nav'); 
-    echo $this->Html->css('/GtwUi/css/navbar-top'); 
+    $this->Helpers->load('GtwRequire.GtwRequire');
+    echo $this->GtwRequire->req('ui/app/active_nav');
+    echo $this->Html->css('/GtwUi/css/navbar-top');
 ?>
