@@ -7,15 +7,14 @@ to be used as the core ui plugin of a website and extended with
 
 Requirements
 ------------
-CakePHP 2.4.0+
-[BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake)
-[GtwRequire] (https://github.com/Phillaf/GtwRequire)
+CakePHP 2.4.0+  
+[BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake)  
+[GtwRequire](https://github.com/Phillaf/GtwRequire)  
 
 Features
 --------
 * Javascript modules loaded asynchroneously using [Require.js] (http://requirejs.org/).
 * Consistent layout built on [Bootstrap 3] (http://getbootstrap.com/).
-* Icons from [FontAwesome] (http://fortawesome.github.io/Font-Awesome/).
 * [DataTables] (http://datatables.net) for easily searchable and paginated tables.
 
 Installation
@@ -45,7 +44,8 @@ Add the following config to your requirejs config file
     requirejs.config({
         paths: {
             ui:     '/GtwUi/js',
-            jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min'
+            jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min',
+            jqueryDataTables: '//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min'
         }
     });
     
