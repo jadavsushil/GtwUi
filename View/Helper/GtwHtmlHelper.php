@@ -23,5 +23,4 @@ class GtwHtmlHelper extends BoostCakeHtmlHelper {
         $this->Require->req("ui/app/datatables_enable");
         return $css . $hide . $loading . $tableId;
     }
-    
 }

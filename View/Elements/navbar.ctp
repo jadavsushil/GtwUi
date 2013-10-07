@@ -5,7 +5,7 @@
  * @link      http://gintonicweb.com
  */
 ?>
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar <?php echo $this->fetch('navclass');?>">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,6 +29,5 @@
 
 <?php 
     $this->Helpers->load('GtwRequire.GtwRequire');
-    echo $this->GtwRequire->req('ui/app/active_nav'); 
-    echo $this->Html->css('/GtwUi/css/navbar-top'); 
+    echo $this->GtwRequire->req('ui/app/active_nav');
 ?>

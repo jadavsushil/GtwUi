@@ -9,7 +9,7 @@ Requirements
 ------------
 CakePHP 2.4.0+  
 [BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake)  
-[GtwRequire](https://github.com/Phillaf/GtwRequire)  
+[GtwRequire](https://github.com/Phillaf/GtwRequire)
 
 Features
 --------
