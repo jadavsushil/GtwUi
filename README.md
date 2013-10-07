@@ -24,11 +24,10 @@ Load the plugin using bootstrap.php
 
     CakePlugin::load('GtwUi');
     
-Alias the HTML helper in your AppController.php
+Alias the HTML helper in your AppController.php, you can use [BoostCake](http://slywalker.github.io/cakephp-plugin-boost_cake/) helpers for forms, pagination and flash messages.
 
     public $helpers = array(
-        'Html' => array('className' => 'GtwUi.GtwHTML'),
-        'Form' => array('className' => 'GtwUi.GtwForm')
+        'Html' => array('className' => 'GtwUi.GtwHTML')
     );
     
 Create a symlink from plugin's webroot to the application webroot
