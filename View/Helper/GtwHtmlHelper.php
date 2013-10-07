@@ -7,7 +7,7 @@
 
 App::uses('BoostCakeHtmlHelper', 'BoostCake.View/Helper');
 App::uses('GtwRequireHelper', 'GtwRequire.View/Helper');
- 
+
 class GtwHtmlHelper extends BoostCakeHtmlHelper {
     
     public $helpers = array(
@@ -16,11 +16,10 @@ class GtwHtmlHelper extends BoostCakeHtmlHelper {
     );
     
     public function datatable($tableid){
-        $css = $this->css("/GtwUi/css/dataTables.bootstrap.css");
         $hide = '<style type="text/css">#'.$tableid.'{display:none;}</style>';
         $loading = '<span id="'.$tableid.'-loader">loading</span>';
         $tableId = '<input type="hidden" id="data-table-ref" value="' . $tableid . '"/>';
         $this->Require->req("ui/app/datatables_enable");
-        return $css . $hide . $loading . $tableId;
+        return $hide . $loading . $tableId;
     }
 }
