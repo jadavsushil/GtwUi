@@ -1,28 +1,27 @@
-Gintonic Web's CakePHP Ui plugin
-======================
+# Ui plugin for CakePHP
 
 Plugin that binds various front-end and javascript libraries with CakePHP. This plugin is used as 
-a dependency to [other Gtw plugins](https://github.com/Phillaf?tab=repositories).
+a dependency to [other Gintonic Web plugins](https://github.com/Phillaf?tab=repositories).
 
-Requirements
-------------
+## Requirements
+
 CakePHP 2.4.0+  
 [BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake)   
 [GtwRequire](https://github.com/Phillaf/GtwRequire)
 
-Features
---------
+## Features
+
 * Javascript modules loaded asynchroneously using [Require.js] (http://requirejs.org/).
 * Consistent layout built on [Bootstrap 3] (http://getbootstrap.com/).
 * [DataTables] (http://datatables.net) for easily searchable and paginated tables.
 
-Installation
--------------
+## Installation
+
 
 Make sure you have [BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake) and 
 [GtwRequire](https://github.com/Phillaf/GtwRequire) correctly configured.
 
-Load the plugin using bootstrap.php
+Load the plugin by adding this line to app/Config/bootstrap.php
 
     CakePlugin::load('GtwUi');
     
@@ -44,7 +43,7 @@ Add the following config to your requirejs config file
         }
     });
     
-Notes
--------
-
-This plugin is still under development and should probably not be used yet :)
+## Copyright and license
+Author: Philippe Lafrance    
+Copyright 2013 [Gintonic Web](http://gintonicweb.com)    
+Licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html)
