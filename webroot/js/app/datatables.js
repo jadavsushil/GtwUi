@@ -143,4 +143,23 @@ define(['jquery', 'jqueryDataTables'], function($) {
             }
         } );
     }
+    
+    /*
+     * Activate DataTables() on .datatable class.
+     * Nasty patch due to limitations with DataTables 1.9.4 library that doesn't support class injection.
+     */
+    $(document).ready(function() {
+        $('.datatable').each(function(){
+            $(this).dataTable();
+            $filter = $(this).parent().find("[id$=_filter]");
+            
+            $filter.addClass('col-md-6');
+            $filter.find('label').contents().unwrap().filter(function() {
+                return this.nodeType === 3;
+            }).remove();
+            $filter.find('input').addClass('form-control');
+            $filter.parent().prepend('<label class="control-label col-md-6">Search</label>');
+            $(this).show();
+        });
+    });
 });
