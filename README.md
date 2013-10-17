@@ -25,6 +25,12 @@ Load the plugin by adding this line to app/Config/bootstrap.php
 
     CakePlugin::load('GtwUi');
     
+Alias the HTML helper in your AppController.php
+
+    public $helpers = array(
+        'Html' => array('className' => 'GtwUi.GtwHtml'),
+    );
+    
 Create a symlink from plugin's webroot to the application webroot
 
     # On windows
