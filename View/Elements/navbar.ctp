@@ -29,5 +29,5 @@
 
 <?php 
     $this->Helpers->load('GtwRequire.GtwRequire');
-    echo $this->GtwRequire->req('ui/app/activenav');
+    echo $this->GtwRequire->req('ui/activenav');
 ?>
