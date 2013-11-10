@@ -23,7 +23,7 @@
                 <?php echo $this->fetch('nav-right-links'); ?>
             </ul>
         </div><!--/.nav-collapse -->
-        <input id='active-lnk' type="hidden" value='<?php echo $this->fetch('active_nav'); ?>'/>
+        <input class='active-lnk' type="hidden" value='<?php echo $this->fetch('navbar_active'); ?>'/>
     </div>
 </div>
 

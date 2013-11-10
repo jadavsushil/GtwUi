@@ -6,6 +6,8 @@
 */
 require(['jquery'], function(){
     $( document ).ready(function() {
-        $( '#' + $('#active-lnk').val() ).addClass('active');
+        $( ".active-lnk" ).each(function() {
+            $( '#' + $(this).val() ).addClass('active');
+        });
     });
 });
