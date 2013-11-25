@@ -17,9 +17,11 @@ CakePHP 2.4.0+
 
 ## Installation
 
+Copy this plugin in a folder named `app/Plugin/GtwUi` or add these lines to your `composer.json` file :
 
-Make sure you have [BoostCake](https://github.com/slywalker/cakephp-plugin-boost_cake) and 
-[GtwRequire](https://github.com/Phillaf/GtwRequire) correctly configured.
+        "require": {
+            "phillaf/gtw_ui": "*@dev"
+        }
 
 Load the plugin by adding this line to app/Config/bootstrap.php
 
@@ -31,13 +33,7 @@ Alias the HTML helper in your AppController.php
         'Html' => array('className' => 'GtwUi.GtwHtml'),
     );
     
-Create a symlink from plugin's webroot to the application webroot
-
-    # On windows
-    mklink /J app\webroot\GtwUi app\Plugin\GtwUi\webroot
-    
-    # On linux
-    ln -s app/Plugin/GtwUi/webroot app/webroot/GtwUi
+Create a symlink from this plugin's webroot to the application webroot by running `Console/cake GtwUi.symlink`
     
 Add the following config to your requirejs config file
 
