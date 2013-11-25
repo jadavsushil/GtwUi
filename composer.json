@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.3.0",
         "composer/installers": "*",
-        "slywalker/boost_cake": "*"
-        "phillaf/gtw_require": "*@dev",
+        "slywalker/boost_cake": "*",
+        "phillaf/gtw_require": "*@dev"
     }
 }
