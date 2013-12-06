@@ -10,7 +10,7 @@ App::uses('GtwRequireHelper', 'GtwRequire.View/Helper');
 
 class GtwHtmlHelper extends BoostCakeHtmlHelper {
 
-    public $helpers = array('Session', 'Html');
+    public $helpers = array('Session', 'Html', 'Text');
     
     private function __getAction($action, $params = array()){
         return array_merge(
@@ -21,6 +21,19 @@ class GtwHtmlHelper extends BoostCakeHtmlHelper {
             ),
             (array)$params
         );
+    }
+    
+    public function textify($text, $limit=null){
+        
+        if (isset($limit)){
+            $text = $this->Text->truncate( $text, $limit, array(
+                'ellipsis' => '...',
+                'exact' => false,
+                'html' => true
+            ) );
+        }
+        $text = $this->Text->autoLink( $text );
+        return $this->Text->autoParagraph( $text );
     }
     
     public function actionIcon($icon, $action, $params = array()){
