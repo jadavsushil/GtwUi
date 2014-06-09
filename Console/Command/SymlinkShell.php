@@ -8,10 +8,24 @@
  */
 
 class SymlinkShell extends AppShell {
+
     public function main() {
-        if (!file_exists(WWW_ROOT.'GtwUi')){
-            symlink ( CakePlugin::path('GtwUi').'webroot' , WWW_ROOT.'GtwUi');
+        $this->symlinkDir(APP . "Plugin"); 
+        $this->symlinkDir(ROOT. "/plugins");
+    }
+
+    public function symlinkDir($folder){
+        $d = opendir($folder);
+        while ($f = readdir($d)) {
+            if (substr($f,0,3) != 'Gtw'){
+                continue;
+            }
+            if(file_exists($folder . '/' . $f . '/' . 'webroot')){
+                symlink ( $folder . '/' . $f . '/' . 'webroot', WWW_ROOT.$f );
+                $this->out($folder . '/' . $f);
+            }
         }
+        closedir($d);
     }
 }
 ?>
