@@ -10,7 +10,7 @@ App::uses('GtwRequireHelper', 'GtwRequire.View/Helper');
 
 class GtwHtmlHelper extends BoostCakeHtmlHelper {
 
-    public $helpers = array('Session', 'Html', 'Text');
+    public $helpers = array('Session', 'Html', 'Text', 'Form');
     
     private function __getAction($action, $params = array()){
         return array_merge(
@@ -85,4 +85,12 @@ class GtwHtmlHelper extends BoostCakeHtmlHelper {
         );
     }
 
+    public function actionDateTimeCal(){
+        return '<div class="input-group date form_datetime col-md-7" data-date="'.date("Y-m-d").'" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                            <input class="form-control" size="16" type="text" value="" readonly>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input1" value="" /><br/>';
+    }
 }
