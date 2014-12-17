@@ -93,4 +93,15 @@ class GtwHtmlHelper extends BoostCakeHtmlHelper {
                     </div>
                     <input type="hidden" id="dtp_input1" value="" /><br/>';
     }
+    
+    public function getCrumbsNav($separator = '&raquo;', $startText = false)
+    {
+		$options['separator'] = $separator;
+		$options['class'] = 'breadcrumb';
+		return $this->Html->getCrumbList($options,$startText);
+	}
+    public function addCrumbsNav($name, $link = null, $options = null)
+    {
+		$this->Html->addCrumb($name, $link, $options);
+	}
 }
